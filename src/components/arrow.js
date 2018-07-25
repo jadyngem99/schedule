@@ -10,21 +10,24 @@ class Arrow extends Component {
   }
 
   toggleArrow = function() {
+    this.props.callback(this.state.status);
     if (this.state.status) {
       //closes it
-      document.getElementById("arrow").classlist.remove("arrow-closed");
+      document.getElementById(this.id).classList.remove("arrow-closed");
     } else {
       //open
-      document.getElementById("arrow").classlist.add("arrow-closed");
+      console.log(document.getElementById(this.id));
+      document.getElementById(this.id).classList.add("arrow-closed");
     }
 
     this.setState({ status: !this.state.status });
   }.bind(this);
 
   render() {
+    this.id = `arrow ${this.props.id}`;
     return (
       <a
-        id="arrow"
+        id={this.id}
         onClick={() => this.toggleArrow()}
         className={`${this.props.className} arrow`}
       />

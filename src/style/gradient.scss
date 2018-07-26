@@ -1,0 +1,8 @@
+.gradient {
+  background-color: crimson;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(120deg, $color-purple 0%, $color-light-blue 100%);
+  z-index: -10;
+}
